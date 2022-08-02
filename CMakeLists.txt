@@ -9,12 +9,11 @@ add_executable(allocator_cli main.cpp allocator.h)
 
 option(WITH_BOOST_TEST "Whether to build Boost test" ON)
 
-
-
 set_target_properties(allocator_cli  PROPERTIES
     CXX_STANDARD 14
     CXX_STANDARD_REQUIRED ON
 )
+
 
 
 if (MSVC)
@@ -41,7 +40,4 @@ set(CPACK_PACKAGE_VERSION_PATCH "${PROJECT_VERSION_PATCH}")
 set(CPACK_PACKAGE_CONTACT example@example.com)
 include(CPack)
 
-if(WITH_BOOST_TEST)
-    enable_testing()
-    add_test(tests_allocator tests_allocator)
-endif()
+
